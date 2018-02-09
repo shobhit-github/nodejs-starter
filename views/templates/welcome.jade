@@ -1,0 +1,75 @@
+
+extends layout
+
+block content
+
+    table.email-body_inner(align='center', width='570', cellpadding='0', cellspacing='0')
+        // Body content
+        tr
+            td.content-cell
+                h1 Welcome, {{name}}!
+                p Thanks for trying [Product Name]. We’re thrilled to have you on board.
+                p To get the most out of [Product Name], do this primary next step:
+                // Action
+                table.body-action(align='center', width='100%', cellpadding='0', cellspacing='0')
+                    tr
+                        td(align='center')
+                            //
+                              Border based button
+                              https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design
+                            table(width='100%', border='0', cellspacing='0', cellpadding='0')
+                                tr
+                                    td(align='center')
+                                        table(border='0', cellspacing='0', cellpadding='0')
+                                            tr
+                                                td
+                                                    a.button.button--(href='{{action_url}}', target='_blank') Do this Next
+                p For reference, here's your login information:
+                table.attributes(width='100%', cellpadding='0', cellspacing='0')
+                    tr
+                        td.attributes_content
+                            table(width='100%', cellpadding='0', cellspacing='0')
+                                tr
+                                    td.attributes_item
+                                        strong Login Page:
+                                        |  {{login_url}}
+                                tr
+                                    td.attributes_item
+                                        strong Username:
+                                        |  {{username}}
+                p
+                    | You've started a {{trial_length}} day trial. You can upgrade to a paying account or cancel any time.
+                table.attributes(width='100%', cellpadding='0', cellspacing='0')
+                    tr
+                        td.attributes_content
+                            table(width='100%', cellpadding='0', cellspacing='0')
+                                tr
+                                    td.attributes_item
+                                        strong Trial Start Date:
+                                        |  {{trial_start_date}}
+                                tr
+                                    td.attributes_item
+                                        strong Trial End Date:
+                                        |  {{trial_end_date}}
+                p
+                    | If you have any questions, feel free to
+                    a(href='mailto:{{support_email}}') email our customer success team
+                    | . (We're lightning quick at replying.) We also offer
+                    a(href='{{live_chat_url}}') live chat
+                    |  during business hours.
+                p
+                    | Thanks,
+                    br
+                    | [Sender Name] and the [Product Name] Team
+                p
+                    strong P.S.
+                    |  Need immediate help getting started? Check out our
+                    a(href='{{help_url}}') help documentation
+                    | . Or, just reply to this email, the [Product Name] support team is always ready to help!
+                // Sub copy
+                table.body-sub
+                    tr
+                        td
+                            p.sub
+                                | If you’re having trouble with the button above, copy and paste the URL below into your web browser.
+                            p.sub {{action_url}}
